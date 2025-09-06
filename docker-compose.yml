@@ -1,0 +1,36 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 123
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo:/data/db
+    restart: always
+
+  postgres:
+    container_name: postgresql_db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: producto_db
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+        - microservices
+
+
+volumes:
+    mongo:
+    postgres:
+networks:
+  microservices:
+    driver: bridge

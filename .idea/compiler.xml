@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for ecommerce" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="config-server" />
+        <module name="discovery-server" />
+        <module name="common-exceptions" />
+        <module name="producto-microservice" />
+        <module name="cliente-microservice" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cliente-microservice" options="-parameters" />
+      <module name="common-exceptions" options="-parameters" />
+      <module name="config-server" options="-parameters" />
+      <module name="discovery-server" options="-parameters" />
+      <module name="ecommerce" options="-parameters" />
+      <module name="microservices" options="-parameters" />
+      <module name="producto-microservice" options="-parameters" />
+    </option>
+  </component>
+</project>
